@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController.swift
 //  MemeMeV2
 //
 //  Created by Dr GJK Marais on 2016/10/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var imagePicked: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -24,17 +24,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .black
         
         topText = textFieldInitialise(textfield: topText, content: "TOP", delegate: self)
         bottomText = textFieldInitialise(textfield: bottomText, content: "BOTTOM", delegate: self)
     }
     
+    //CLears the default text
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if (textField.text == "TOP") || (textField.text == "BOTTOM") {
             textField.text = ""
         }
     }
     
+    //Sets textfield attributes
     func textFieldInitialise(textfield: UITextField, content: String, delegate: UITextFieldDelegate) -> UITextField {
         let finalTextfield = textfield
         finalTextfield.delegate = delegate
@@ -44,11 +47,52 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return finalTextfield
     }
     
+    //Dismisses keyboard on return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
+
     //Ensures camera is available before making button useable
+    //Subscribes to keyboard notifications allowing appropriate shift of keyboard
     override func viewWillAppear(_ animated: Bool) {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        subscribeToKeyboardNotifications()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        unsubscribeFromKeyboardNotifications()
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if bottomText.isEditing {
+        view.frame.origin.y -= getKeyboardHeight(notification: notification)
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if bottomText.isEditing {
+            view.frame.origin.y = 0
+        }
+    }
+    
+    //Attaches Notification center allowing the shifting of the keyboard appropriately
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+    }
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue.height
+    }
+
     //Action to select an image from photo library
     @IBAction func albumOpen(_ sender: AnyObject) {
         let pickerController = UIImagePickerController()
