@@ -10,10 +10,15 @@ import UIKit
 
 class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
+    //MARK: Properties
     @IBOutlet weak var imagePicked: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
+    @IBOutlet weak var navigationBar: UINavigationItem!
+    @IBOutlet weak var bottonToolbar: UIToolbar!
+    @IBOutlet weak var exportButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.black,
@@ -59,6 +64,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewWillAppear(_ animated: Bool) {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
+        exportButton.isEnabled = !(imagePicked.image == nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -119,6 +125,56 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         pickerController.delegate = self
         pickerController.sourceType = UIImagePickerControllerSourceType.camera
         self.present(pickerController, animated: true, completion: nil)
+    }
+    
+    //Restart meme creation
+    @IBAction func cancel(_ sender: AnyObject) {
+        topText.text = "TOP"
+        bottomText.text = "BOTTOM"
+        imagePicked.image = nil
+        exportButton.isEnabled = false
+    }
+    
+    //Create meme image from textfields and chosen image
+    func generateMemeImage() -> UIImage {
+        // Render view to an image
+        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isToolbarHidden = true
+
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame,
+                                     afterScreenUpdates: true)
+        let memedImage : UIImage =
+            UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isToolbarHidden = false
+        
+        return memedImage
+    }
+    
+    //Exporting a meme
+    @IBAction func exportMeme(_ sender: AnyObject) {
+        let image = generateMemeImage()
+        let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        controller.completionWithItemsHandler = {(activityType, completed, returnedItems, error) in
+            
+            if completed {
+                self.save()
+                self.dismiss(animated: true, completion: nil)
+            }
+
+        }
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    
+    func save() {
+        //Create the meme
+        if let memeImage = imagePicked.image {
+        let meme = MemeStruct(topText: topText.text!, bottomText: bottomText.text!, originalImage: memeImage, memeImage: generateMemeImage())
+        }
     }
     
 }

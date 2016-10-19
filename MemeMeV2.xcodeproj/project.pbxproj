@@ -13,6 +13,7 @@
 		C4460A511DB6A50700EA18EB /* MemeMeV2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4460A4F1DB6A50700EA18EB /* MemeMeV2.xcdatamodeld */; };
 		C4460A531DB6A50700EA18EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4460A521DB6A50700EA18EB /* Assets.xcassets */; };
 		C4460A561DB6A50700EA18EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4460A541DB6A50700EA18EB /* LaunchScreen.storyboard */; };
+		C4460A5E1DB7AFC100EA18EB /* MemeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4460A5D1DB7AFC100EA18EB /* MemeStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C4460A521DB6A50700EA18EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4460A551DB6A50700EA18EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4460A571DB6A50700EA18EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4460A5D1DB7AFC100EA18EB /* MemeStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				C4460A481DB6A50700EA18EB /* AppDelegate.swift */,
 				C4460A4A1DB6A50700EA18EB /* MemeEditorViewController.swift */,
 				C4460A4C1DB6A50700EA18EB /* Main.storyboard */,
+				C4460A5D1DB7AFC100EA18EB /* MemeStruct.swift */,
 				C4460A521DB6A50700EA18EB /* Assets.xcassets */,
 				C4460A541DB6A50700EA18EB /* LaunchScreen.storyboard */,
 				C4460A571DB6A50700EA18EB /* Info.plist */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4460A4B1DB6A50700EA18EB /* MemeEditorViewController.swift in Sources */,
+				C4460A5E1DB7AFC100EA18EB /* MemeStruct.swift in Sources */,
 				C4460A511DB6A50700EA18EB /* MemeMeV2.xcdatamodeld in Sources */,
 				C4460A491DB6A50700EA18EB /* AppDelegate.swift in Sources */,
 			);
