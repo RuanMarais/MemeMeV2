@@ -14,6 +14,8 @@
 		C4460A531DB6A50700EA18EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4460A521DB6A50700EA18EB /* Assets.xcassets */; };
 		C4460A561DB6A50700EA18EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4460A541DB6A50700EA18EB /* LaunchScreen.storyboard */; };
 		C4460A5E1DB7AFC100EA18EB /* MemeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4460A5D1DB7AFC100EA18EB /* MemeStruct.swift */; };
+		C4460A601DB7F5FA00EA18EB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4460A5F1DB7F5FA00EA18EB /* TableViewController.swift */; };
+		C47DF1E31DB802D300A8C834 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47DF1E21DB802D300A8C834 /* PreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		C4460A551DB6A50700EA18EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4460A571DB6A50700EA18EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4460A5D1DB7AFC100EA18EB /* MemeStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeStruct.swift; sourceTree = "<group>"; };
+		C4460A5F1DB7F5FA00EA18EB /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C47DF1E21DB802D300A8C834 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				C4460A481DB6A50700EA18EB /* AppDelegate.swift */,
 				C4460A4A1DB6A50700EA18EB /* MemeEditorViewController.swift */,
 				C4460A4C1DB6A50700EA18EB /* Main.storyboard */,
+				C47DF1E21DB802D300A8C834 /* PreviewViewController.swift */,
+				C4460A5F1DB7F5FA00EA18EB /* TableViewController.swift */,
 				C4460A5D1DB7AFC100EA18EB /* MemeStruct.swift */,
 				C4460A521DB6A50700EA18EB /* Assets.xcassets */,
 				C4460A541DB6A50700EA18EB /* LaunchScreen.storyboard */,
@@ -145,7 +151,9 @@
 				C4460A4B1DB6A50700EA18EB /* MemeEditorViewController.swift in Sources */,
 				C4460A5E1DB7AFC100EA18EB /* MemeStruct.swift in Sources */,
 				C4460A511DB6A50700EA18EB /* MemeMeV2.xcdatamodeld in Sources */,
+				C4460A601DB7F5FA00EA18EB /* TableViewController.swift in Sources */,
 				C4460A491DB6A50700EA18EB /* AppDelegate.swift in Sources */,
+				C47DF1E31DB802D300A8C834 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +313,7 @@
 				C4460A5C1DB6A50700EA18EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

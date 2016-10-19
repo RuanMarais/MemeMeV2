@@ -169,12 +169,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         self.present(controller, animated: true, completion: nil)
     }
     
-    
     func save() {
         //Create the meme
-        if let memeImage = imagePicked.image {
-        let meme = MemeStruct(topText: topText.text!, bottomText: bottomText.text!, originalImage: memeImage, memeImage: generateMemeImage())
-        }
+        let meme = MemeStruct(topText: topText.text!, bottomText: bottomText.text!, originalImage: imagePicked.image!, memeImage: generateMemeImage())
+        
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
 }
