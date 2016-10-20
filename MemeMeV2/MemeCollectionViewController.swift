@@ -10,6 +10,7 @@ import UIKit
 
 class MemeCollectionViewController: UICollectionViewController {
     
+    //MARK: Properties
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     var memes: [MemeStruct] {
         return (UIApplication.shared.delegate as! AppDelegate).memes
@@ -46,6 +47,7 @@ class MemeCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    //Segue to meme preview
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemePreview") as! PreviewViewController
         detailController.meme = self.memes[indexPath.row]

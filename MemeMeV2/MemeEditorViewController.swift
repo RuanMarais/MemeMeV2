@@ -34,7 +34,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         bottomText = textFieldInitialise(textfield: bottomText, content: "BOTTOM", delegate: self)
     }
     
-    //CLears the default text
+    //Clears the default text
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if (textField.text == "TOP") || (textField.text == "BOTTOM") {
             textField.text = ""
@@ -165,8 +165,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         self.present(controller, animated: true, completion: nil)
     }
     
+    //Adds the created meme to the meme array for access by collection/tableview
     func save() {
-        //Create the meme
         let meme = MemeStruct(topText: topText.text!, bottomText: bottomText.text!, originalImage: imagePicked.image!, memeImage: generateMemeImage())
         
         let object = UIApplication.shared.delegate
@@ -174,6 +174,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         appDelegate.memes.append(meme)
     }
     
+    //Restarts the meme creation
     @IBAction func clearMeme(_ sender: AnyObject) {
         topText.text = "TOP"
         bottomText.text = "BOTTOM"

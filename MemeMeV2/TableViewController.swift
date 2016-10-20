@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //MARK: Properties
     @IBOutlet weak var memeTable: UITableView!
     var memes: [MemeStruct] {
         return (UIApplication.shared.delegate as! AppDelegate).memes

@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="-2108" y="-440"/>
         </scene>
-        <!--Meme Collection View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="aEx-Z5-XVm">
             <objects>
                 <collectionViewController id="AKi-HK-muB" customClass="MemeCollectionViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,7 +92,7 @@
                             <outlet property="delegate" destination="AKi-HK-muB" id="omO-RR-9a3"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Y0S-RR-lAB">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="Y0S-RR-lAB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7VV-Rx-U5W">
                             <connections>
                                 <segue destination="JHn-Vo-V3k" kind="presentation" id="iI9-vp-GGL"/>
@@ -178,7 +178,7 @@
             </objects>
             <point key="canvasLocation" x="-282" y="318"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="8vx-hR-rOm">
             <objects>
                 <viewController id="SVd-Qj-bJ7" customClass="TableViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -229,7 +229,7 @@
                             <constraint firstItem="zCw-5G-bUB" firstAttribute="top" secondItem="Vtz-ub-Pmv" secondAttribute="bottom" id="uny-eu-Gib"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zLe-dj-nR6">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="zLe-dj-nR6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="an9-wl-mm2">
                             <connections>
                                 <segue destination="JHn-Vo-V3k" kind="presentation" id="FJP-tu-6mN"/>
@@ -244,7 +244,7 @@
             </objects>
             <point key="canvasLocation" x="-1215" y="318"/>
         </scene>
-        <!--Meme Editor View Controller-->
+        <!--Meme Creator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMeV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -303,7 +303,7 @@
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="fBd-vf-oQh"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="bn9-qQ-PRd">
+                    <navigationItem key="navigationItem" title="Meme Creator" id="bn9-qQ-PRd">
                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="5sa-Oy-k39">
                             <connections>
                                 <action selector="exportMeme:" destination="BYZ-38-t0r" id="lsb-3e-sqS"/>

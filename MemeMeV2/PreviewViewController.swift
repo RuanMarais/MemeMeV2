@@ -10,6 +10,7 @@ import UIKit
 
 class PreviewViewController: UIViewController {
 
+    //MARK: Properties
     @IBOutlet weak var imagePreview: UIImageView!
     var meme: MemeStruct?
     
