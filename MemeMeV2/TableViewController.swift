@@ -18,6 +18,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     //Refreshes table on editor cancel
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.memeTable!.reloadData()
     }
     

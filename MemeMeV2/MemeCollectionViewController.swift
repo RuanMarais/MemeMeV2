@@ -19,7 +19,7 @@ class MemeCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let space: CGFloat = 3.0
+        let space: CGFloat = 8.0
         let dimension = (min(view.frame.size.width, view.frame.size.height) - (2 * space)) / 3.0
         
         flowLayout.minimumInteritemSpacing = space
@@ -28,6 +28,7 @@ class MemeCollectionViewController: UICollectionViewController {
 
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.collectionView!.reloadData()
     }
 
@@ -41,7 +42,6 @@ class MemeCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MemeCollectionViewCell
         let meme = self.memes[indexPath.row]
     
-        cell.memeName?.text = meme.topText + " " + meme.bottomText
         cell.memeImage?.image = meme.memeImage
         
         return cell

@@ -51,39 +51,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rpi-2U-JJJ">
-                            <size key="itemSize" width="97" height="116"/>
+                            <size key="itemSize" width="108" height="108"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="8Po-bI-eos" customClass="MemeCollectionViewCell" customModule="MemeMeV2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="97" height="116"/>
+                                <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="97" height="116"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wzr-hf-zNS"/>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezU-pz-eQJ">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="Wzr-hf-zNS" firstAttribute="leading" secondItem="8Po-bI-eos" secondAttribute="leadingMargin" id="70H-QJ-SWL"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="Wzr-hf-zNS" secondAttribute="trailing" constant="1" id="BfI-la-ElI"/>
-                                    <constraint firstItem="Wzr-hf-zNS" firstAttribute="top" secondItem="8Po-bI-eos" secondAttribute="topMargin" id="C3C-ue-4xe"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="ezU-pz-eQJ" secondAttribute="trailing" constant="1" id="JXw-Og-oZv"/>
-                                    <constraint firstItem="ezU-pz-eQJ" firstAttribute="leading" secondItem="8Po-bI-eos" secondAttribute="leadingMargin" id="Jer-4y-O9L"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="Wzr-hf-zNS" secondAttribute="bottom" constant="20" id="iaW-2B-RKu"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="ezU-pz-eQJ" secondAttribute="bottom" constant="1" id="xHS-dq-NRN"/>
+                                    <constraint firstItem="Wzr-hf-zNS" firstAttribute="top" secondItem="8Po-bI-eos" secondAttribute="top" id="28V-Cg-MAI"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wzr-hf-zNS" secondAttribute="bottom" id="JzO-Ay-5d7"/>
+                                    <constraint firstItem="Wzr-hf-zNS" firstAttribute="leading" secondItem="8Po-bI-eos" secondAttribute="leading" id="aX2-rb-Ark"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wzr-hf-zNS" secondAttribute="trailing" id="gaW-5q-B15"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="memeImage" destination="Wzr-hf-zNS" id="LIt-gW-Bcf"/>
-                                    <outlet property="memeName" destination="ezU-pz-eQJ" id="ZxU-vW-ydR"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

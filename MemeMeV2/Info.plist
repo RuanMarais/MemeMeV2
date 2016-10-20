@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Allows you to use stored media for a meme</string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allows tou to take a photo to use for a meme</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allows you to pick and image from your library</string>
 	<key>CFBundleDevelopmentRegion</key>

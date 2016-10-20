@@ -72,7 +72,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func keyboardWillShow(notification: NSNotification) {
         if bottomText.isEditing {
-        view.frame.origin.y -= getKeyboardHeight(notification: notification)
+        view.frame.origin.y = getKeyboardHeight(notification: notification) * (-1)
         }
     }
     
@@ -100,10 +100,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
     //Action to select an image from photo library
     @IBAction func albumOpen(_ sender: AnyObject) {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        self.present(pickerController, animated: true, completion: nil)
+        pickImageFromSource(source: .photoLibrary)
     }
     
     //To cancel the image selection view controller
@@ -120,9 +117,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func cameraOpen(_ sender: AnyObject) {
+        pickImageFromSource(source: .camera)
+    }
+    
+    func pickImageFromSource (source: UIImagePickerControllerSourceType) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        pickerController.sourceType = UIImagePickerControllerSourceType.camera
+        pickerController.sourceType = source
         self.present(pickerController, animated: true, completion: nil)
     }
     

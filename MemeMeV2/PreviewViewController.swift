@@ -16,8 +16,10 @@ class PreviewViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.imagePreview!.image = meme?.memeImage
         self.tabBarController?.tabBar.isHidden = true
+        self.imagePreview.contentMode = .scaleAspectFit
 }
     
     override func viewWillDisappear(_ animated: Bool) {
