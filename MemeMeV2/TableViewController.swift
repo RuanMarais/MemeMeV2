@@ -9,9 +9,14 @@
 import UIKit
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
+    @IBOutlet weak var memeTable: UITableView!
     var memes: [MemeStruct] {
         return (UIApplication.shared.delegate as! AppDelegate).memes
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.memeTable!.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -31,10 +36,9 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         // Set the name and image
         cell.textLabel?.text = meme.topText + " " + meme.bottomText
-        cell.imageView?.image = meme.originalImage!
+        cell.imageView?.image = meme.memeImage
         
         return cell
-
     }
 
 }
