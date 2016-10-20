@@ -18,8 +18,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var bottonToolbar: UIToolbar!
     @IBOutlet weak var exportButton: UIBarButtonItem!
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
-    
+        
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.black,
         NSForegroundColorAttributeName : UIColor.white,
@@ -127,12 +126,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         self.present(pickerController, animated: true, completion: nil)
     }
     
-    //Restart meme creation
+    //cancel meme creation
     @IBAction func cancel(_ sender: AnyObject) {
-        topText.text = "TOP"
-        bottomText.text = "BOTTOM"
-        imagePicked.image = nil
-        exportButton.isEnabled = false
+        self.dismiss(animated: true, completion: nil)
     }
     
     //Create meme image from textfields and chosen image
@@ -176,6 +172,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
+    }
+    
+    @IBAction func clearMeme(_ sender: AnyObject) {
+        topText.text = "TOP"
+        bottomText.text = "BOTTOM"
+        imagePicked.image = nil
+        exportButton.isEnabled = false
     }
     
 }

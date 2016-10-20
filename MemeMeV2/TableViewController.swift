@@ -15,10 +15,12 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         return (UIApplication.shared.delegate as! AppDelegate).memes
     }
     
+    //Refreshes table on editor cancel
     override func viewWillAppear(_ animated: Bool) {
         self.memeTable!.reloadData()
     }
     
+    //Push preview VC
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemePreview") as! PreviewViewController
         detailController.meme = self.memes[indexPath.row]
