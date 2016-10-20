@@ -99,6 +99,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="Rpi-2U-JJJ" id="XUd-yh-3ai"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jeu-7h-JFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
